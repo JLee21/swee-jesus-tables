@@ -1,3 +1,9 @@
+# Host frontend on S3 bucket
+
+aws s3 mb s3://sweetjesustables.com
+aws s3 website --index-document index.html --error-document error.html s3://sweetjesustables.com --acl public-read
+aws s3 sync build/ s3://sweetjesustables.com --acl public-read
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
